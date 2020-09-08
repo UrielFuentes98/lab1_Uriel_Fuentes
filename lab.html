@@ -5,25 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lab items list</title>
   <script src="./utils.js"></script>
-  <script>
-    // DOMContentLoaded wait until all dom is loaded, check the docs in below link
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-    document.addEventListener("DOMContentLoaded", (_) => {
-      let item_name = document.querySelector("#item-name");
-      let item_value = document.querySelector("#item-value");
-      // use here what you have in utils.js
-    });
-  </script>
+  <style>
+    .error{
+      border: 2px solid red;
+    }
+    #add-item{
+      margin-left: 15px;
+    }
+    .added-item{
+      margin-bottom: 10px;
+    }
+    .remove-item {
+      margin-left: 15px;
+    }
+    #total{
+      font-size: 25px;
+      margin-left: 55px;
+      margin-top: 8px;
+    }
+    #results{
+      display:flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
+  <h1>Shopping items list.</h1>
   <div id="container">
-    item: <input type="text" id="item-name">
-    value: <input type="text" id="item-value">
-    <button id="add-item"> add</button>
+    item: <input type="text" id="item-name" class="name_normal">
+    value: <input type="text" id="item-value" class="value_normal">
+  <button id="add-item" onclick="add_item_to_list_with_template()"> add</button>
   </div>
-  <ul class="items">
-
-  </ul>
-  <div id="total"></div>
+  <div id="results">
+    <div>
+      <ul id="items">
+      </ul>
+    </div>
+    <div id="total"></div>
+  </div>
 </body>
 </html>
